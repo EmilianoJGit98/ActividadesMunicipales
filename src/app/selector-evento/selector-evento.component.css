@@ -1,0 +1,47 @@
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.preCosquin {
+  /* border: solid 1px red !important; */
+  background: url("../../../public/img/precosquin/2azul.png");
+  background-size: 70px 70px;
+  background-repeat: no-repeat;
+  background-position: right;
+  border-radius: 0px 13px 13px 0px !important;
+  /* border: 3px solid transparent !important;
+  border-image: linear-gradient(to right, #f2c97e 0%, #4ba8d7 100%) 1 !important;
+  border-radius: 15px; */
+
+  /* background: linear-gradient(to top, #ffcb52, #08a310); */
+  /* -webkit-background-clip: text; */
+  /* background-clip: text; */
+  /* font-weight: bold !important; */
+  /* -webkit-text-fill-color: transparent; */
+}
+
+.atodaCosta {
+  background: url("../../../public/img/atodacosta/logoatc.jpg");
+  background-size: 70px 80px;
+  background-repeat: no-repeat;
+  background-position: right;
+  border-radius: 0px 13px 13px 0px !important;
+}
+
+.actMunicipales {
+  background: url("../../../public/img/municipalidad/logoFsa.png");
+  background-size: 70px 70px;
+  background-repeat: no-repeat;
+  background-position: right;
+  border-radius: 0px 13px 13px 0px !important;
+}
+
+.oktoberfest {
+  background: url("../../../public/img/oktoberfest/oktoberLogoFondo.png");
+  background-size: 70px 80px;
+  background-repeat: no-repeat;
+  background-position: right;
+  border-radius: 0px 13px 13px 0px !important;
+}

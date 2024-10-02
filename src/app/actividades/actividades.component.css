@@ -1,0 +1,86 @@
+@media (max-width: 768px) {
+  * {
+    font-size: 11px;
+  }
+
+  .styleActividades {
+    /* background: red !important; */
+    overflow-y: scroll !important;
+    height: 65vh !important;
+    max-height: 65vh !important;
+    /* background: red !important; */
+  }
+}
+
+@media (min-width: 768px) {
+  * {
+    font-size: 11px;
+  }
+
+  .styleActividades {
+    /* background: red !important; */
+    overflow-y: scroll !important;
+    height: 65vh !important;
+    max-height: 65vh !important;
+    /* background: red !important; */
+  }
+
+  .styleActividades::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+
+  .styleActividades::-webkit-scrollbar-track {
+    background: rgba(255, 166, 0, 0);        /* color of the tracking area */
+  }
+
+  .styleActividades::-webkit-scrollbar-thumb {
+    background-color: #3aa08f;
+    border-radius: 20px;
+    border: 3px solid #106053;
+  }
+}
+
+.checkInfraccion label,
+.checkActividadOktober label {
+  cursor: pointer;
+  border: solid 1px #ececec;
+  border-radius: 5px !important;
+  padding: 5px;
+  width: 100%;
+  margin-bottom: 4px;
+  font-size: 15px;
+  /* background: white !important; */
+}
+
+.checkInfraccion label:hover,
+.checkActividadOktober label:hover {
+  /* box-shadow: 4px 4px 7px #EBEBEB; */
+  transition: ease all 0.3s;
+  /* background: white !important; */
+}
+
+.checkInfraccion input:checked ~ label {
+  background-image: linear-gradient(to right, #5fbdad, #0d9c84);
+  /* box-shadow: 4px 4px 7px #EBEBEB; */
+  color: white !important;
+}
+
+.checkActividadOktober input:checked ~ label {
+  background-image: linear-gradient(to right, #5f9bbd, #0d509c) !important;
+  /* box-shadow: 4px 4px 7px #EBEBEB; */
+  color: white !important;
+}
+
+@media (max-width: 768px) {
+  .checkInfraccion label,
+  .checkActividadOktober label {
+    font-size: 11px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .checkInfraccion label,
+  .checkActividadOktober label {
+    font-size: 15px !important;
+  }
+}

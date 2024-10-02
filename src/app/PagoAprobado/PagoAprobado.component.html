@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="mt-5 px-4 border rounded shadow-sm py-4">
+    <h5 class="text-center fw-bold text-success">¡Pago realizado correctamente!</h5>
+    <h5 class="text-center mt-3">Muchas gracias por participar del evento</h5>
+
+    <label class="text-justify mt-4">Estamos emocionados de contar contigo y esperamos que disfrutes de todo lo que
+      hemos
+      preparado. ¡Nos vemos en
+      Oktoberfest!</label>
+
+
+
+    <label class="text-center mt-4 w-100">Atentamente, La Municipalidad de Ciudad de Formosa</label>
+
+
+    <div class="logoEvento d-flex justify-content-center">
+      <div class="text-center w-50 mb-2 azulPre">
+        <img class="shadow-sm" src="img/oktoberfest/oktoberLogoFondo.png">
+      </div>
+    </div>
+
+
+    <div class="evento1" *ngIf="IDevento == 2">
+      <div class="d-flex justify-content-center">
+
+        <div class="text-center mb-2 subOscuro">
+          <img src="img/municipalidad/subClaro.png">
+        </div>
+        <div class="text-center mb-2 disfrutaOscuro">
+          <img src="img/municipalidad/DisfrutaClaro.png">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mt-3 d-flex justify-content-center">
+    <button class="btn btn-success fw-bold fs-5" [routerLink]="['/eventos']">Finalizar</button>
+  </div>
+</div>

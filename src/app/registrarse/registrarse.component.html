@@ -1,0 +1,226 @@
+<div class="container px-0 mt-0 contentFormulario" style="background:  #14328300;">
+
+  <div class="evento3" *ngIf="IDevento == 1">
+    <div class="d-flex justify-content-center">
+      <div class="text-center mb-2 subOscuro">
+        <img src="img/municipalidad/subOscuro.png">
+      </div>
+      <div class="text-center mb-2 disfrutaOscuro">
+        <img src="img/municipalidad/DisfrutaOscuro.png">
+      </div>
+    </div>
+  </div>
+
+  <div class="evento1" *ngIf="IDevento == 3">
+    <div class="d-flex justify-content-center">
+      <div class="text-center w-50 mb-2 azulPre">
+        <img class="shadow" src="img/precosquin/2azul.png">
+      </div>
+    </div>
+  </div>
+
+  <div class="evento1" *ngIf="IDevento == 2">
+    <div class="d-flex justify-content-center">
+      <div class="text-center w-50 mb-2 azulPre">
+        <img class="shadow" src="img/oktoberfest/oktoberLogoFondo.png">
+      </div>
+    </div>
+  </div>
+
+  <h4 class="Tinicio1 text-center fw-bold mt-3">Vos también podés ser parte de la fiesta</h4>
+  <h5 class="Tinicio2 text-center fw-bold">Registrate y descubre las actividades que tenemos para vos!!</h5>
+
+  <div class="styleRegistrarse px-4 me-1">
+    <form class="row mt-2" [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+      <h4 class="Tinicio1 text-center fw-bold">Seleccione la opción que corresponda</h4>
+
+      <div class="px-2 col-6 mb-3 d-flex justify-content-center">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="tipo_persona" id="fisica" [value]="1"
+            (change)="tipoPersona = 1; onTipoPersonaChange()" checked>
+          <label class="form-check-label" for="fisica">Persona Física</label>
+        </div>
+      </div>
+      <div class="px-2 col-6 mb-3 d-flex justify-content-center">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="tipo_persona" [value]="2" id="juridica"
+            (change)="tipoPersona = 2; onTipoPersonaChange()">
+          <label class="form-check-label" for="juridica">Persona Jurídica</label>
+        </div>
+      </div>
+
+      <div class="px-2 col-md-3" *ngIf="tipoPersona === 1">
+        <div class="form-floating mb-1">
+          <input type="text" class="form-control shadow-sm ms-1 fw-bold" formControlName="dni" placeholder="" />
+          <label class="ms-1 fw-bold rounded" for="dni">DNI</label>
+        </div>
+        <div *ngIf="registroForm.get('dni')?.invalid && registroForm.get('dni')?.touched">
+          <div class="ms-2 msjError" *ngIf="registroForm.get('dni')?.errors?.['required']">El DNI es obligatorio.</div>
+          <div class="ms-2 msjError" *ngIf="registroForm.get('dni')?.errors?.['maxLength']">El DNI no puede tener más de
+            8
+            dígitos.</div>
+          <div class="ms-2 msjError" *ngIf="registroForm.get('dni')?.errors?.['minLength']">El DNI no puede tener menos
+            de 8
+            dígitos.</div>
+          <div class="ms-2 msjError" *ngIf="registroForm.get('dni')?.errors?.['pattern']">El DNI solo puede contener
+            dígitos
+            númericos.</div>
+        </div>
+        <div class="ms-2 msjValid" *ngIf="registroForm.get('dni')?.valid && registroForm.get('dni')?.touched">
+          El DNI es válido.
+        </div>
+      </div>
+
+      <div class="px-2 col-md-3" *ngIf="tipoPersona === 2">
+        <div class="form-floating mb-1">
+          <input type="text" class="form-control shadow-sm ms-1 fw-bold" formControlName="cuit" placeholder="" />
+          <label class="ms-1 fw-bold rounded" for="cuit">CUIT</label>
+        </div>
+        <div *ngIf="registroForm.get('cuit')?.invalid && registroForm.get('cuit')?.touched">
+          <div class="ms-2 msjError" *ngIf="registroForm.get('cuit')?.errors?.['maxLength']">El CUIT no puede tener más
+            de 11 dígitos.</div>
+          <div class="ms-2 msjError" *ngIf="registroForm.get('cuit')?.errors?.['minLength']">El CUIT no puede tener
+            menos de 11 dígitos.</div>
+          <div class="ms-2 msjError" *ngIf="registroForm.get('cuit')?.errors?.['required']">El CUIT es obligatorio.
+          </div>
+          <div class="ms-2 msjError" *ngIf="registroForm.get('cuit')?.errors?.['pattern']">El CUIT solo puede contener
+            dígitos númericos.
+          </div>
+        </div>
+        <div class="ms-2 msjValid" *ngIf="registroForm.get('cuit')?.valid && registroForm.get('cuit')?.touched">
+          El CUIT es válido.
+        </div>
+      </div>
+
+      <div class="px-2 col-md-3">
+        <div class="form-floating mb-1">
+          <input type="text" class="form-control shadow-sm ms-1 fw-bold " name="nombre" id="nombre" placeholder=""
+            formControlName="nombre" />
+          <label class="ms-1 fw-bold" for="nombre">Nombre</label>
+        </div>
+      </div>
+
+      <div class="px-2 col-md-3" *ngIf="tipoPersona === 1">
+        <div class="form-floating mb-1">
+          <input type="text" class="form-control shadow-sm ms-1 fw-bold " name="apellido" id="apellido" placeholder=""
+            formControlName="apellido" />
+          <label class="ms-1 fw-bold" for="apellido">Apellido</label>
+        </div>
+      </div>
+
+      <div class="px-2 col-md-3">
+        <div class="form-floating mb-1">
+          <input type="text" class="form-control shadow-sm ms-1 fw-bold " name="correo" id="correo" placeholder=""
+            formControlName="correo" />
+          <label class="ms-1 fw-bold" for="correo">Correo Electronico</label>
+        </div>
+      </div>
+      <div *ngIf="registroForm.get('correo')?.invalid && registroForm.get('correo')?.touched">
+        <div class="ms-2 msjError" *ngIf="registroForm.get('correo')?.errors?.['email']">Debe ingresar un correo
+          electrónico valido.
+        </div>
+      </div>
+      <div class="ms-2 msjValid" *ngIf="registroForm.get('correo')?.valid && registroForm.get('correo')?.touched">
+        Correo electrónico valido
+      </div>
+
+      <div class="px-2 col-md-3" *ngIf="tipoPersona === 1">
+        <div class="form-floating mb-1">
+          <input type="text" class="form-control shadow-sm ms-1 fw-bold " name="cod_area" id="cod_area"
+            placeholder="ej: +54" formControlName="cod_area" />
+          <label class="ms-1 fw-bold" for="cod_area">Codigo de Area (ej: +54)</label>
+        </div>
+        <div *ngIf="registroForm.get('cod_area')?.invalid && registroForm.get('cod_area')?.touched">
+          <div class="ms-2 msjError" *ngIf="registroForm.get('cod_area')?.errors?.['required']">
+            El código de área es obligatorio.
+          </div>
+          <div class="ms-2 msjError" *ngIf="registroForm.get('cod_area')?.errors?.['maxlength']">
+            El código de área no debe exceder los 4 caracteres.
+          </div>
+          <div class="ms-2 msjError" *ngIf="registroForm.get('cod_area')?.errors?.['pattern']">
+            Debe colocar un código de área válido, ej: +54.
+          </div>
+        </div>
+        <div class="ms-2 msjValid" *ngIf="registroForm.get('cod_area')?.valid && registroForm.get('cod_area')?.touched">
+          Codigo de area Valido
+        </div>
+      </div>
+
+      <div class="px-2 col-md-3" *ngIf="tipoPersona === 1">
+        <div class="form-floating mb-3">
+          <input type="number" class="form-control shadow-sm ms-1 fw-bold " name="contacto" id="contacto"
+            placeholder="ej: 3705018907" formControlName="telefono" />
+          <label class="ms-1 fw-bold" for="contacto">N° Telefono</label>
+        </div>
+      </div>
+
+      <div class="px-2 col-md-3" *ngIf="tipoPersona === 2">
+        <div class="form-floating mb-1">
+          <input type="text" class="form-control shadow-sm ms-1 fw-bold " name="cod_area" id="cod_area"
+            placeholder="ej: +54" formControlName="cod_area" />
+          <label class="ms-1 fw-bold" for="cod_area">Codigo de Area (ej: +54)</label>
+        </div>
+        <div *ngIf="registroForm.get('cod_area')?.invalid && registroForm.get('cod_area')?.touched">
+          <div class="ms-2 msjError" *ngIf="registroForm.get('cod_area')?.errors?.['required']">
+            El código de área es obligatorio.
+          </div>
+          <div class="ms-2 msjError" *ngIf="registroForm.get('cod_area')?.errors?.['maxlength']">
+            El código de área no debe exceder los 4 caracteres.
+          </div>
+          <div class="ms-2 msjError" *ngIf="registroForm.get('cod_area')?.errors?.['pattern']">
+            Debe colocar un código de área válido, ej: +54.
+          </div>
+        </div>
+
+      </div>
+      <div *ngIf="registroForm.get('cod_area')?.invalid && registroForm.get('cod_area')?.touched">
+        <div class="ms-2 msjError" *ngIf="registroForm.get('cod_area')?.errors?.['maxLength']">Debe colocar un codigo de
+          area valido, ej: +54
+        </div>
+      </div>
+
+      <div class="px-2 col-md-3" *ngIf="tipoPersona === 2">
+        <div class="form-floating mb-3">
+          <input type="number" class="form-control shadow-sm ms-1 fw-bold " name="contacto" id="contacto"
+            placeholder="ej: 3705018907" formControlName="telefono" />
+          <label class="ms-1 fw-bold" for="contacto">N° Telefono</label>
+        </div>
+      </div>
+
+
+
+      <!-- <div class="px-2 col-12">
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-3">
+            <div class="form-floating mb-1">
+              <input type="text" class="form-control shadow-sm ms-1 fw-bold " name="cod_area" id="cod_area"
+                placeholder="ej: +54" formControlName="cod_area" />
+              <label class="ms-1 fw-bold" for="cod_area">Codigo de Area (ej: +54)</label>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-floating mb-3">
+              <input type="number" class="form-control shadow-sm ms-1 fw-bold " name="contacto" id="contacto"
+                placeholder="ej: 3705018907" formControlName="telefono" />
+              <label class="ms-1 fw-bold" for="contacto">N° Telefono</label>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+
+      <div class="col-md-12 d-flex justify-content-center mb-3">
+        <a href="" class="btn px-3 py-2 fw-bold btn-danger shadow-sm me-2">Cancelar</a>
+        <button class="btn px-3 py-2 fw-bold btn-success shadow-sm" type="submit"
+          [disabled]="registroForm.invalid">Registrar</button>
+      </div>
+
+    </form>
+  </div>
+
+
+  <!-- <div>
+    <pre>{{ registroForm.value | json }}</pre>
+    <pre>{{ registroForm.invalid }}</pre>
+  </div> -->
+</div>

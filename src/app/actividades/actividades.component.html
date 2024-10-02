@@ -1,0 +1,88 @@
+<div class="containter px-3 mt-2">
+
+
+  <label class="fw-bold text-center w-100 mt-2 fs-med">
+    Seleccione las actividades que desea realizar
+  </label>
+
+  <form class="row mt-2 px-1" [formGroup]="formConfirmar" (ngSubmit)="onSubmitFormActividades()">
+    <div class="styleActividades px-3">
+      <!-- <div *ngIf="IDevento === 1">
+        <div *ngFor="let actividad of actividades">
+          <div class="row ps-0">
+            <div class="col-md-12 px-0">
+              <div class="form-check fs-8 fw-bold mb-2 text-justify checkInfraccion me-4" [ngClass]="{
+                checkInfraccion: IDevento === 1
+              }">
+                <input type="checkbox" class="form-check-input d-none" id="{{ actividad.id }}" [value]="actividad.id"
+                  (change)="onCheckboxChange($event, actividad)">
+                <label class="form-check-label py-1 d-flex bd-highlight" for="{{ actividad.id }}">
+                  <span class="opcion1 p-2 w-100 bd-highlight">
+                    {{ actividad.title }}
+                  </span>
+                  <span class="opcion2 p-2 bd-highlight">
+                    ${{ actividad.unit_price | number}}
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <!-- <div *ngIf="IDevento === 2">
+        <div *ngFor="let actividad of actividadesOktober24">
+          <div class="row ps-0">
+            <div class="col-md-12 px-0">
+              <div class="form-check fs-8 fw-bold mb-2 text-justify checkInfraccion me-4" [ngClass]="{
+                checkActividadOktober: IDevento === 2
+              }">
+                <input type="checkbox" class="form-check-input d-none" id="{{ actividad.id }}" [value]="actividad.id"
+                  (change)="onCheckboxChange($event, actividad)">
+                <label class="form-check-label py-1 d-flex bd-highlight" for="{{ actividad.id }}">
+                  <span class="opcion1 p-2 w-100 bd-highlight">
+                    {{ actividad.title }}
+                  </span>
+                  <span class="opcion2 p-2 bd-highlight">
+                    ${{ actividad.unit_price | number}}
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <div *ngFor="let actividad of actividadesMunicipales">
+        <div class="row ps-0">
+          <div class="col-md-12 px-0">
+            <div class="form-check fs-8 fw-bold mb-2 text-justify checkInfraccion me-4" [ngClass]="{
+              checkActividadOktober: IDevento === 2
+            }">
+              <input type="checkbox" class="form-check-input d-none" id="{{ actividad.idSubRubro }}"
+                [value]="actividad.idSubRubro" (change)="onCheckboxChange($event, actividad)">
+              <label class="form-check-label py-1 d-flex bd-highlight" for="{{ actividad.idSubRubro }}">
+                <span class="opcion1 p-2 w-100 bd-highlight">
+                  {{ actividad.descripcion }}
+                </span>
+                <span class="opcion2 p-2 bd-highlight">
+                  ${{ actividad.ImporteSujerido | number}}
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <p>{{actividades}}</p> -->
+    <div class="d-flex justify-content-center mt-2">
+
+      <a *ngIf="IDevento == 1" class="btn px-3 py-1 fw-bold btn-danger shadow-sm me-2"
+        [routerLink]="['/registrarse', 1]">Cancelar</a>
+      <a *ngIf="IDevento == 2" class="btn px-3 py-1 fw-bold btn-danger shadow-sm me-2"
+        [routerLink]="['/registrarse', 2]">Cancelar</a>
+
+      <button type="submit" class="btn px-3 py-1 btn-success fw-bold">avanzar</button>
+    </div>
+  </form>
+</div>

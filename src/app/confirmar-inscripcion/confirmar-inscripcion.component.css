@@ -1,0 +1,43 @@
+/* .DatosSolicitudDIV {
+} */
+
+@media (max-width: 768px) {
+  /* * {
+    font-size: 12px;
+  } */
+
+  .DatosSolicitudDIV {
+    /* background: red !important; */
+    overflow-y: scroll !important;
+    /* height: 50vh !important; */
+    max-height: 46vh !important;
+    /* background: red !important; */
+  }
+}
+
+@media (min-width: 768px) {
+  /* * {
+    font-size: 12px;
+  } */
+  .DatosSolicitudDIV {
+    /* background: red !important; */
+    overflow-y: scroll !important;
+    height: 45vh !important;
+    max-height: 65vh !important;
+    /* background: red !important; */
+  }
+
+  .DatosSolicitudDIV::-webkit-scrollbar {
+    width: 12px; /* width of the entire scrollbar */
+  }
+
+  .DatosSolicitudDIV::-webkit-scrollbar-track {
+    background: rgba(255, 166, 0, 0); /* color of the tracking area */
+  }
+
+  .DatosSolicitudDIV::-webkit-scrollbar-thumb {
+    background-color: #3aa08f;
+    border-radius: 20px;
+    border: 3px solid #10605349;
+  }
+}
