@@ -5,11 +5,33 @@
 }
 @media (max-width: 768px) {
   .gridForm{
-   display: none;
+    /* background: #f6f6f6; */
+    padding: 30px;
+    /* border-radius: 5px; */
+    margin-top: 00px;
+    /* border: solid 1px #bebebe; */
+  }
+
+  .gridForm form{
+    overflow-y: scroll !important;
+    height: 60vh !important;
+    max-height: 60vh !important;
+  }
+
+  .contentIcono{
+    text-align: center !important;
+    justify-content: center !important;
+    margin-top: 10px;
+    margin-bottom: -10px !important;
   }
 
   .IconoEvento{
-   display: none;
+    width: 200px;
+    height: 90px;
+    border-radius: 5px;
+    /* margin-top: -30px; */
+    /* margin-left: -50px; */
+    /* box-shadow: 5px 5px 15px #949494 !important; */
   }
 
   * {
