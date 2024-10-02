@@ -23,7 +23,7 @@ import { ActividadesMunicipalesService } from '../servicios/ActividadesMunicipal
 export class ActividadesComponent implements OnInit {
   actividadesMunicipales: any[] = [];
   actividadesOktober: any[] = [];
- 
+
   IDevento: number = 0;
   datosRegistro: any; // Variable que contiene los datos del formulario
   actividades: any[] = [];
@@ -61,23 +61,21 @@ export class ActividadesComponent implements OnInit {
         this.s_actividades_october.actividadesOktober();
     });
 
-
     //LISTAR ACTIVIDADES DINAMICAMENTE
-    
-    let arrIDRubros: number[] = [];
-    // console.log(this.IDevento)
+
+    let arrIDRubros: number[] = []; //VARIABLE DONDE SE GUARDAN TODOS LOS IDSUBRRUBROS
+
     if (this.IDevento == 1) {
-      arrIDRubros = this.actividades.map(actividad => actividad.id) // Ejemplo de IDs a enviar  
+      arrIDRubros = this.actividades.map((actividad) => actividad.id); // Ejemplo de IDs a enviar
     } else if (this.IDevento == 2) {
-      arrIDRubros = this.actividadesOktober24.map(actividad => actividad.id) // Ejemplo de IDs a enviar  
+      arrIDRubros = this.actividadesOktober24.map((actividad) => actividad.id); // Ejemplo de IDs a enviar
     }
 
-
     // console.log(arrIDRubros);
-    this.obtenerActividadesMuni(arrIDRubros); 
-
-
     // console.log(this.actividades);
+    // console.log(this.IDevento)
+
+    this.obtenerActividadesMuni(arrIDRubros);
 
     // Suscribirse a los datos del registro
     this.dataRegistroService.currentFormData.subscribe((data) => {
@@ -102,21 +100,25 @@ export class ActividadesComponent implements OnInit {
     });
   }
 
-  obtenerActividadesMuni(actividades: number[]): void {  
-    this.actvMuni.obtenerActividadesPorId(actividades).subscribe(  
-      (data) => {  
-        this.actividadesMunicipales = data; // Asigna los datos recibidos a la variable  
-        // console.log('Actividades obtenidas:', this.actividadesMunicipales);  
-      },  
-      (error) => {  
-        console.error('Error al obtener actividades:', error);  
-      }  
-    );  
-  }  
+  obtenerActividadesMuni(actividades: number[]): void {
+    this.actvMuni.obtenerActividadesPorId(actividades).subscribe(
+      (data) => {
+        this.actividadesMunicipales = data; // Asigna los datos recibidos a la variable
+        // console.log('Actividades obtenidas:', this.actividadesMunicipales);
+      },
+      (error) => {
+        console.error('Error al obtener actividades:', error);
+      }
+    );
+  }
 
   onCheckboxChange(
     event: Event,
-    actividad: { idSubRubro: string; ImporteSujerido: number; descripcion: string }
+    actividad: {
+      idSubRubro: string;
+      ImporteSujerido: number;
+      descripcion: string;
+    }
   ) {
     const target = event.target as HTMLInputElement;
 

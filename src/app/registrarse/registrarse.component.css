@@ -4,10 +4,17 @@
   font-family: "Montserrat", sans-serif;
 }
 @media (max-width: 768px) {
+  .gridForm{
+   display: none;
+  }
+
+  .IconoEvento{
+   display: none;
+  }
+
   * {
     font-size: 11px;
   }
-
   .styleRegistrarse {
     /* background: red !important; */
     overflow-y: scroll !important;
@@ -33,15 +40,63 @@
   }
 
   .azulPre img {
-    width: 70px;
-    height: 65px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
   }
 }
 
 @media (min-width: 768px) {
+  .formularioDekstop{
+    display: block;
+  }
+
+  .contentFormulario{
+    display: none;
+  }
+
   * {
     font-size: 15px;
+  }
+
+  .gridForm{
+    background: #f6f6f6;
+    padding: 30px;
+    border-radius: 5px;
+    margin-top: 60px;
+    border: solid 1px #bebebe;
+  }
+
+  .IconoEvento{
+    width: 200px;
+    height: 90px;
+    border-radius: 5px;
+    position: absolute;
+    margin-top: -30px;
+    margin-left: -50px;
+    box-shadow: 5px 5px 15px #949494 !important;
+  }
+
+  .contentFormulario {
+    /* background: red !important; */
+    overflow-y: scroll !important;
+    height: 76vh !important;
+    max-height: 76vh !important;
+    /* background: red !important; */
+  }
+
+  .contentFormulario::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+
+  .contentFormulario::-webkit-scrollbar-track {
+    background: rgba(255, 166, 0, 0);        /* color of the tracking area */
+  }
+
+  .contentFormulario::-webkit-scrollbar-thumb {
+    background-color: #3aa08f;
+    border-radius: 20px;
+    border: 3px solid #106053;
   }
 
   .logoatcInicio {
@@ -60,7 +115,7 @@
   }
 
   .azulPre img {
-    width: 200px;
+    width: 190px;
     height: 190px;
     border-radius: 50%;
     margin-top: 30px;

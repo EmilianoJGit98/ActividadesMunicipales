@@ -20,6 +20,7 @@ export class RegistrarseComponent implements OnInit {
   IDevento: number;
   registroForm: FormGroup; //variable que va a contener todas las validaciones del formulario
   tipoPersona: number = 1; // Por defecto, Persona Física
+  srcIcono: string = '';
 
   constructor(
     private fb: FormBuilder,
@@ -77,6 +78,18 @@ export class RegistrarseComponent implements OnInit {
       this.IDevento = +params['IDevento']; // Convertir a número
       //console.log(this.IDevento); // Aquí puedes usar el parámetro según lo necesites
     });
+
+    this.setIconoByID(this.IDevento);
+  }
+
+  private setIconoByID(id: number): void {
+    if (id === 1) {
+      this.srcIcono = 'img/municipalidad/ferroH.png';
+    } else if (id === 2) {
+      this.srcIcono = 'img/oktoberfest/logoOktoberH.png';
+    } else {
+      this.srcIcono = 'default/path/to/image.png'; // Valor por defecto si no coincide
+    }
   }
 
   onTipoPersonaChange(): void {
@@ -119,5 +132,5 @@ export class RegistrarseComponent implements OnInit {
       });
       // Aquí puedes realizar el envío del formulario
     }
-  } 
+  }
 }

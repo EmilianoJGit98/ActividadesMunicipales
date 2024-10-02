@@ -31,7 +31,7 @@ a {
 }
 
 .actMunicipales {
-  background: url("../../../public/img/municipalidad/logoFsa.png");
+  background: url("../../../public/img/municipalidad/ferroV.png");
   background-size: 70px 70px;
   background-repeat: no-repeat;
   background-position: right;
@@ -39,8 +39,8 @@ a {
 }
 
 .oktoberfest {
-  background: url("../../../public/img/oktoberfest/oktoberLogoFondo.png");
-  background-size: 70px 80px;
+  background: url("../../../public/img/oktoberfest/logoOktober.png");
+  background-size: 70px 65px;
   background-repeat: no-repeat;
   background-position: right;
   border-radius: 0px 13px 13px 0px !important;
